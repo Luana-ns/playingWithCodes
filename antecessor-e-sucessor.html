@@ -1,0 +1,38 @@
+<!-- Neste exercício vamos calcular e mostrar os valores dos 
+    números antecessor e sucessor do número indicado por meio 
+    do window prompt -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e depois</title>
+    <style>
+        h1{
+            font: 20pt Arial;
+            font-weight: bolder;
+        }
+        button{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            padding: 30px;
+            color: rgb(151, 5, 5);
+            background-color: rgba(140, 214, 190, 0.604);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <button onclick="clicou()">Antecessor e Sucessor</button>
+    <script>
+        function clicou() {
+            var num = Number(window.prompt('Digite um número inteiro qualquer:'))
+            var antecessor = num - 1
+            var sucessor = num + 1
+            window.alert(`Antes de ${num}, temos o número ${antecessor}. Depois de ${num}, temos o número ${sucessor}.`) 
+        }
+    </script> 
+</body>
+</html>
