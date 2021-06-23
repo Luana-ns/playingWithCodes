@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+            text-shadow: 2px 2px 3px #0d0630 ;
+        }
+        input{
+            font-size: 20px;
+            box-shadow: 1px 1px 5px;
+            border-radius: 5px;
+            color: #0d0630;
+
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Velocidade do carro: <input type="number" name= 'txtvel' id='txtvel'> Km/h</p>
+    <input type="button" value = 'Verificar' onclick= "calcular()">
+    <div id= "res">
+
+    </div>
+    <script>
+        function calcular(){
+            var txtv = window.document.querySelector('input#txtvel') //usando # pq vel é id. se fosse class usaria ponto final ao invés da #
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong> ${vel}Km/h</strong>. </p>`
+            if (vel > 60){
+                res.innerHTML += '<p>Você está MULTADO por excesso de velocidade.</p>'
+            }
+            res.innerHTML += `<p style='text-shadow: 1px 1px 1px #0d0630af;'>Dirija sempre usando cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>
